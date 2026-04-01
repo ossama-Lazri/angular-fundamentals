@@ -1,0 +1,80 @@
+# See https://docs.github.com/get-started/getting-started-with-git/ignoring-files for more about ignoring files.
+
+# Environment Variables
+.env
+.env.local
+.env.*.local
+.env.production.local
+*.pem
+
+# Compiled output
+/dist
+/tmp
+/out-tsc
+/bazel-out
+*.js
+*.js.map
+
+# Node
+/node_modules
+npm-debug.log
+yarn-error.log
+pnpm-debug.log
+
+# IDEs and editors
+.idea/
+.project
+.classpath
+.c9/
+*.launch
+.settings/
+*.sublime-workspace
+*.swp
+*.swo
+*~
+.DS_Store
+Thumbs.db
+
+# Visual Studio Code
+.vscode/*
+!.vscode/settings.json
+!.vscode/tasks.json
+!.vscode/launch.json
+!.vscode/extensions.json
+!.vscode/mcp.json
+.history/*
+
+# Angular
+/.angular/cache
+/.angular/build
+.sass-cache/
+
+# Testing
+/coverage
+/test-results
+.nyc_output
+
+# Misc
+/connect.lock
+/libpeerconnection.log
+testem.log
+/typings
+__screenshots__/
+*.log
+*.pot
+*.bak
+*.tmp
+.cache
+
+# OS
+.DS_Store
+Thumbs.db
+.AppleDouble
+.LSOverride
+
+# Lock files (uncomment if sharing dependencies is important)
+pnpm-lock.yaml
+# package-lock.json
+# yarn.lock
+
+.vscode/

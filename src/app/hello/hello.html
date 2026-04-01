@@ -1,0 +1,43 @@
+<div class="flex justify-center items-center">
+  <div class="w-full max-w-md">
+    <!-- Card Container -->
+    <div class="bg-white rounded-xl shadow-lg hover:shadow-xl transition-shadow duration-300 p-8 sm:p-10">
+      <!-- Greeting -->
+      <h2 class="text-3xl sm:text-4xl font-bold text-slate-900 mb-2">
+        {{ sayHello() }}
+      </h2>
+      <p class="text-slate-500 text-sm mb-8">Your personal information</p>
+
+      <!-- Divider -->
+      <div class="h-px bg-gradient-to-r from-transparent via-slate-300 to-transparent mb-8"></div>
+
+      <!-- Info Grid -->
+      <div class="grid grid-cols-1 sm:grid-cols-3 gap-6 sm:gap-4">
+        <!-- Name Info -->
+        <div class="space-y-2">
+          <label class="block text-xs font-semibold text-slate-500 uppercase tracking-wider">Name</label>
+          <p class="text-lg sm:text-xl font-semibold text-slate-900 truncate">{{ name }}</p>
+        </div>
+
+        <!-- Age Info -->
+        <div class="space-y-2">
+          <label class="block text-xs font-semibold text-slate-500 uppercase tracking-wider">Age</label>
+          <p class="text-lg sm:text-xl font-semibold text-slate-900">{{ age }}</p>
+        </div>
+
+        <!-- User Info -->
+        <div class="space-y-2">
+          <label class="block text-xs font-semibold text-slate-500 uppercase tracking-wider">User</label>
+          <p class="text-lg sm:text-xl font-semibold text-slate-900 truncate">{{ user.name }}</p>
+        </div>
+      </div>
+
+      <!-- Status Badge -->
+      <div class="mt-8 pt-6 border-t border-slate-200">
+        <span class="inline-block px-4 py-2 bg-emerald-100 text-emerald-800 text-xs font-semibold rounded-full">
+          ✓ All information loaded
+        </span>
+      </div>
+    </div>
+  </div>
+</div>
