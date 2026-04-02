@@ -1,0 +1,33 @@
+<div class="bg-white rounded-lg shadow-sm p-3">
+  <h4 class="text-sm font-medium text-gray-800 mb-2">{{ model ? 'Edit Student' : 'Add Student' }}</h4>
+
+  <form #f="ngForm" (ngSubmit)="submit(f)" class="space-y-2" novalidate>
+    <div>
+      <label class="block text-xs text-gray-600 mb-1">Full name</label>
+      <input name="name" [(ngModel)]="formModel.name" required minlength="2" class="w-full border rounded-md p-2 text-sm" />
+      <div *ngIf="f.submitted && f.controls['name']?.invalid" class="text-xs text-red-600">Name is required (min 2).</div>
+    </div>
+
+    <div>
+      <label class="block text-xs text-gray-600 mb-1">Age</label>
+      <input name="age" [(ngModel)]="formModel.age" required type="number" min="16" class="w-full border rounded-md p-2 text-sm" />
+      <div *ngIf="f.submitted && f.controls['age']?.invalid" class="text-xs text-red-600">Enter a valid age (>=16).</div>
+    </div>
+
+    <div>
+      <label class="block text-xs text-gray-600 mb-1">Major</label>
+      <input name="major" [(ngModel)]="formModel.major" required class="w-full border rounded-md p-2 text-sm" />
+      <div *ngIf="f.submitted && f.controls['major']?.invalid" class="text-xs text-red-600">Major is required.</div>
+    </div>
+
+    <div class="flex items-center gap-2">
+      <input type="checkbox" name="active" [(ngModel)]="formModel.active" />
+      <label class="text-sm text-gray-700">Active</label>
+    </div>
+
+    <div class="flex items-center gap-2">
+      <button class="px-3 py-1 bg-green-600 text-white rounded-md text-sm" type="submit">{{ model ? 'Save' : 'Add' }}</button>
+      <button type="button" (click)="cancel.emit()" class="px-3 py-1 border rounded-md text-sm">Cancel</button>
+    </div>
+  </form>
+</div>

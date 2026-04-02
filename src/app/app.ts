@@ -8,6 +8,7 @@ import { TodoComponent } from './todo/todo';
 import { RegistrationComponent } from './forms/registration';
 import { LoginComponent } from './forms/login';
 import { ReactiveDemoComponent } from './forms/reactive-demo';
+import { StudentDashboardComponent } from './students/dashboard';
 
 @Component({
   selector: 'app-root',
@@ -21,7 +22,8 @@ import { ReactiveDemoComponent } from './forms/reactive-demo';
     TodoComponent,
     RegistrationComponent,
     LoginComponent,
-    ReactiveDemoComponent
+    ReactiveDemoComponent,
+    StudentDashboardComponent
   ],
   templateUrl: './app.html'
 })

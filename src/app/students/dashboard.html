@@ -1,0 +1,30 @@
+<div class="min-h-screen bg-gray-50 p-6">
+  <div class="max-w-5xl mx-auto">
+    <div class="flex items-center justify-between mb-4">
+      <h1 class="text-xl font-bold">Day 5 — Student Management Dashboard</h1>
+      <div class="text-sm text-gray-600">Local persistence: localStorage</div>
+    </div>
+
+    <div class="mb-4 flex gap-3 flex-col md:flex-row items-start">
+      <input [(ngModel)]="search" (input)="applyFilter()" placeholder="Search by name or major" class="flex-1 border rounded-md p-2 text-sm" />
+      <select [(ngModel)]="filter" (change)="applyFilter()" class="border rounded-md p-2 text-sm">
+        <option value="all">All</option>
+        <option value="active">Active</option>
+        <option value="inactive">Inactive</option>
+      </select>
+      <div class="ml-auto flex gap-2">
+        <button (click)="clearAll()" class="px-3 py-1 border rounded-md text-sm text-red-600">Clear All</button>
+      </div>
+    </div>
+
+    <div class="grid grid-cols-1 md:grid-cols-3 gap-6">
+      <div class="md:col-span-2">
+        <app-student-list [students]="filtered" (edit)="startEdit($event)" (remove)="onRemove($event)"></app-student-list>
+      </div>
+
+      <div>
+        <app-student-form [model]="editing" (save)="onSave($event)" (cancel)="onCancel()"></app-student-form>
+      </div>
+    </div>
+  </div>
+</div>
