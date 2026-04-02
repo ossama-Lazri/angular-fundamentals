@@ -5,6 +5,9 @@ import { InputComponent } from './input/input';
 import { CalculatorComponent } from './calculator/calculator';
 import { CardComponent } from './card/card';
 import { TodoComponent } from './todo/todo';
+import { RegistrationComponent } from './forms/registration';
+import { LoginComponent } from './forms/login';
+import { ReactiveDemoComponent } from './forms/reactive-demo';
 
 @Component({
   selector: 'app-root',
@@ -15,7 +18,10 @@ import { TodoComponent } from './todo/todo';
     InputComponent,
     CalculatorComponent,
     CardComponent,
-    TodoComponent
+    TodoComponent,
+    RegistrationComponent,
+    LoginComponent,
+    ReactiveDemoComponent
   ],
   templateUrl: './app.html'
 })
