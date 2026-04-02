@@ -4,6 +4,7 @@ import { ToggleComponent } from './toggle/toggle';
 import { InputComponent } from './input/input';
 import { CalculatorComponent } from './calculator/calculator';
 import { CardComponent } from './card/card';
+import { TodoComponent } from './todo/todo';
 
 @Component({
   selector: 'app-root',
@@ -13,7 +14,8 @@ import { CardComponent } from './card/card';
     ToggleComponent,
     InputComponent,
     CalculatorComponent,
-    CardComponent
+    CardComponent,
+    TodoComponent
   ],
   templateUrl: './app.html'
 })

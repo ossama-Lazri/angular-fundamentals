@@ -1,0 +1,28 @@
+<div class="todo p-4 max-w-lg bg-white rounded-lg shadow-md mx-auto">
+  <h2 class="text-xl font-semibold mb-3 text-gray-900">TODOs — Directives demo</h2>
+
+  <div class="mb-4 flex flex-wrap gap-2">
+    <button (click)="toggleShow()" class="px-3 py-1 rounded-md border text-sm text-gray-800 hover:bg-gray-50 transition">
+      {{ showAdd ? 'Cancel' : 'Add Todo' }}
+    </button>
+  </div>
+
+  <div *ngIf="showAdd" class="mb-4 flex gap-2">
+    <input [(ngModel)]="newTitle" placeholder="New todo" class="flex-1 border rounded-md p-2 text-sm" />
+    <button (click)="add()" class="px-3 py-1 bg-blue-600 text-white rounded-md text-sm hover:bg-blue-700 transition">Add</button>
+  </div>
+
+  <div *ngIf="todos.length === 0" class="text-sm text-gray-500 mb-3">No todos yet — add one!</div>
+
+  <ul class="space-y-2">
+    <li *ngFor="let todo of todos; trackBy: trackById" [ngClass]="{ 'opacity-70': todo.done }" [appHighlight]="'bg-yellow-50'" class="flex items-center justify-between p-3 rounded-md hover:shadow-sm transition">
+      <div class="flex items-center gap-3">
+        <input type="checkbox" [checked]="todo.done" (change)="toggleDone(todo)" class="w-4 h-4" />
+        <span class="text-sm" [ngClass]="{ 'line-through text-gray-500': todo.done, 'text-gray-900': !todo.done }">{{ todo.title }}</span>
+      </div>
+      <div>
+        <button (click)="remove(todo.id)" class="text-sm text-red-600 hover:text-red-700 transition">Remove</button>
+      </div>
+    </li>
+  </ul>
+</div>
